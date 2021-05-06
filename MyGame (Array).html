@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>  
+    let box;
+    let array = [];
+    let arrayM = [];
+    let count = 0;
+    for (let index = 0; index < 36; index++) {
+        box = document.createElement("div");
+        box.style.width = "50px";
+        box.style.height = "50px";
+        box.style.borderRadius="30px"
+         if(index == 30 ){
+        box.style.backgroundColor = "blue";
+        }
+        else {
+        box.style.backgroundColor = "gray";
+        }
+        
+        
+        box.style.margin = "10px";
+        box.style.display = "inline-block";
+        document.body.appendChild(box);
+        array[index] = box;
+        console.log(array[index])
+        count++;
+        if (count % 6 == 0) {
+            document.write("<br>");
+        }
+
+    }
+    let random1= Math.floor(Math.random()*31)
+     
+     
+     let obsticaleLength=Math.floor(Math.random()*4)+3;
+
+     // make random obsticales
+     for(let i = obsticaleLength ; i<9 ;){
+         
+        let random = Math.floor(Math.random() * 36);
+           if(random != random1 && random != random1-1 && random != random1 +1 && random != 30 && random != 24 && random != 31 ){
+           arrayM[i]=array[random]
+           arrayM[i].style.background="red"
+           i++;
+            }
+            
+     }
+     
+     arrayM[5]=array[5]
+     arrayM[5].style.background="yellow"
+     
+     let x = 30
+     let y =30
+     let current=array[y]
+     let NextPos = array[x];
+     
+
+     document.addEventListener("keydown", keyDown);
+        function keyDown(e){
+    if(e.key === "ArrowUp" || e.key === "Up"){
+        x-=6
+        NextPos = array[x]
+        if (NextPos.style.background !="red" & NextPos.style.background !="yellow") {
+            current=array[y]
+            y-=6
+        current.style.background="gray";
+        NextPos.style.background="blue";
+        }
+         else {
+            let lost =  setInterval(function(){  alert("Game Finished")
+                 clearInterval(lost) } , 1000);
+        }
+    }
+    
+    else if(e.key === "ArrowDown" || e.key === "Down"){
+        x+=6
+        NextPos = array[x]
+        if (NextPos.style.background !="red" & NextPos.style.background !="yellow") {
+            current=array[y]
+            y+=6
+        current.style.background="gray";
+        NextPos.style.background="blue";
+        }
+         else {
+            let lost =  setInterval(function(){  alert("Game Finished")
+                 clearInterval(lost) } , 1000);
+        }
+     }
+    else if(e.key === "ArrowRight" || e.key === "Right"){
+        x+=1
+        NextPos = array[x]
+        if (NextPos.style.background !="red" & NextPos.style.background !="yellow") {
+            current=array[y]
+            y+=1
+        current.style.background="gray";
+        NextPos.style.background="blue";
+        }
+         else {
+            let lost =  setInterval(function(){  alert("Game Finished")
+                 clearInterval(lost) } , 1000);
+        }
+        
+    }
+    else if(e.key === "ArrowLeft" || e.key === "Left"){
+        x-=1
+        NextPos = array[x]
+        if (NextPos.style.background !="red" & NextPos.style.background !="yellow") {
+            current=array[y]
+            y-=1
+        current.style.background="gray";
+        NextPos.style.background="blue";
+        }
+         else {
+            let lost =  setInterval(function(){  alert("Game Finished")
+                 clearInterval(lost) } , 1000);
+        }
+           }
+                           }
+
+
+    </script>
+</body>
+</html>
