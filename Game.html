@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .Squares{
+            background-color: burlywood;
+            border: black ;
+            width: 30px;
+            height: 30px;
+        }
+        </style>
+    <table>
+        <div>
+            <tr>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+             </tr> 
+             <tr>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+             </tr> 
+             <tr>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+             </tr> 
+             <tr>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+             </tr>
+             <tr>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+             </tr>
+             <tr>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+                <td class="Squares"></td>
+             </tr>      
+        </div>
+    </table><br>
+    <p id="msg"></p>
+    <script>
+        let box =document.getElementsByClassName("Squares");
+        let obsticaleLength=Math.floor(Math.random()*4)+3;
+        for(i=obsticaleLength;i<9;){
+            let randomIndexObsticale=Math.floor(Math.random()*36);
+                if(randomIndexObsticale!=30 && randomIndexObsticale !=31 && randomIndexObsticale!=24
+                    && randomIndexObsticale!=5 && randomIndexObsticale!=4 && randomIndexObsticale!=11)
+                box.item(randomIndexObsticale).style.backgroundColor="brown";
+                i++;
+            }
+            box.item(30).style.backgroundColor="navy";
+            box.item(5).style.backgroundColor="rgb(41, 65, 0)";
+
+    var item=30;
+    document.addEventListener("keydown", keyDown);
+    function keyDown(e){
+        if(e.key === "ArrowUp" || e.key === "Up"){
+            if(box.item(item-6).style.backgroundColor!="brown"){
+                item=item-6;
+                box.item(item).style.backgroundColor="rgba(27, 69, 133, 0.767)";
+                box.item(30).style.backgroundColor="navy";
+            } else if(box.item(item).style.backgroundColor=="brown"){
+                
+                alert("You lost!")
+                location.reload();
+            }
+            if(item==5){
+                alert("Congrats! You won!")
+                location.reload();
+            }
+            if(box.item(item+6).style.backgroundColor!="brown" || box.item(item+6).style.backgroundColor!="navy"){
+                box.item(item+6).style.backgroundColor="burlywood";
+            }
+        }
+        else if(e.key === "ArrowDown" || e.key === "Down"){
+            if(box.item(item+6).style.backgroundColor!="brown"){
+                item=item+6;
+                box.item(item).style.backgroundColor="rgba(27, 69, 133, 0.767)";
+                box.item(30).style.backgroundColor="navy";
+                
+            } else if(box.item(item).style.backgroundColor=="brown"){
+                
+                alert("You lost!")
+                location.reload();
+            } 
+            if(item==5){
+                alert("Congrats! You won!")
+                location.reload();
+            }
+            if(box.item(item-6).style.backgroundColor!="brown" || box.item(item-6).style.backgroundColor!="navy"){
+                box.item(item-6).style.backgroundColor="burlywood";
+            }
+        }
+        else if(e.key === "ArrowRight" || e.key === "Right"){
+            
+            if(box.item(item+1).style.backgroundColor!="brown"){
+                item=item+1;
+                box.item(item).style.backgroundColor="rgba(27, 69, 133, 0.767)";
+                box.item(30).style.backgroundColor="navy";
+                
+            } else if(box.item(item).style.backgroundColor=="brown"){
+                
+                alert("You lost!")
+                location.reload();
+            } 
+            if(item==5){
+                alert("Congrats! You won!")
+                location.reload();
+            }
+            if(box.item(item-1).style.backgroundColor!="brown" || box.item(item-1).style.backgroundColor!="navy"){
+                box.item(item-1).style.backgroundColor="burlywood";
+            }
+        }
+        else if(e.key === "ArrowLeft" || e.key === "Left"){
+            if(box.item(item-1).style.backgroundColor!="brown"){
+                item=item-1;
+                box.item(item).style.backgroundColor="rgba(27, 69, 133, 0.767)";
+                box.item(30).style.backgroundColor="navy";
+                
+            } else if(box.item(item).style.backgroundColor=="brown"){
+                alert("You lost!")
+                location.reload();
+            } 
+            if(item==5){
+                alert("Congrats! You won!")
+                location.reload();
+            }
+            if(box.item(item+1).style.backgroundColor!="brown" || box.item(item+1).style.backgroundColor!="navy"){
+                box.item(item+1).style.backgroundColor="burlywood";
+            }
+            }
+        }
+    
+
+        //rgba(27, 69, 133, 0.767)
+        // element.onclick= function(e){ 
+        //     if(rndx>=2&&rndx<=5){
+        //         element.style.backgroundColor="red";
+        //         element.innerHTML=rndx;
+        //     }else{
+        //         element.style.backgroundColor="green";
+        //         element.innerHTML=rndx;
+        //     }  
+        // }
+    </script>
+</body>
+</html>
