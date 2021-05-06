@@ -9,13 +9,34 @@
 <body>
     <style>
         .Squares{
-            background-color: burlywood;
-            border: black ;
-            width: 30px;
-            height: 30px;
+            background-color: rgb(34,193,195);
+            background-color:linear-gradient(108deg, rgba(34,193,195,1) 26%, rgba(53,130,183,1) 59%, rgba(45,193,253,1) 91%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
         }
+        table{
+            border-color: black;
+            border: 5   px solid black;
+            width: fit-content;
+            
+        }
+        table.center {
+            margin-left: auto; 
+            margin-right: auto;
+        }
+        body{
+            background-image: url('background-wallpaper-hd-3.jpg');
+        }
+       
         </style>
-    <table>
+        <h1 style="color: white;">
+            Welcome to try Not to CrachMe  Game
+        </h1>
+        <br>
+        <br>
+        <br>
+    <table class="center">
         <div>
             <tr>
                 <td class="Squares"></td>
@@ -99,7 +120,7 @@
                 location.reload();
             }
             if(box.item(item+6).style.backgroundColor!="brown" || box.item(item+6).style.backgroundColor!="navy"){
-                box.item(item+6).style.backgroundColor="burlywood";
+                box.item(item+6).style.backgroundColor="rgb(34,193,195)";
             }
         }
         else if(e.key === "ArrowDown" || e.key === "Down"){
@@ -118,7 +139,7 @@
                 location.reload();
             }
             if(box.item(item-6).style.backgroundColor!="brown" || box.item(item-6).style.backgroundColor!="navy"){
-                box.item(item-6).style.backgroundColor="burlywood";
+                box.item(item-6).style.backgroundColor="rgb(34,193,195)";
             }
         }
         else if(e.key === "ArrowRight" || e.key === "Right"){
@@ -138,7 +159,7 @@
                 location.reload();
             }
             if(box.item(item-1).style.backgroundColor!="brown" || box.item(item-1).style.backgroundColor!="navy"){
-                box.item(item-1).style.backgroundColor="burlywood";
+                box.item(item-1).style.backgroundColor="rgb(34,193,195)";
             }
         }
         else if(e.key === "ArrowLeft" || e.key === "Left"){
@@ -156,22 +177,10 @@
                 location.reload();
             }
             if(box.item(item+1).style.backgroundColor!="brown" || box.item(item+1).style.backgroundColor!="navy"){
-                box.item(item+1).style.backgroundColor="burlywood";
+                box.item(item+1).style.backgroundColor="rgb(34,193,195)";
             }
             }
         }
-    
-
-        //rgba(27, 69, 133, 0.767)
-        // element.onclick= function(e){ 
-        //     if(rndx>=2&&rndx<=5){
-        //         element.style.backgroundColor="red";
-        //         element.innerHTML=rndx;
-        //     }else{
-        //         element.style.backgroundColor="green";
-        //         element.innerHTML=rndx;
-        //     }  
-        // }
     </script>
 </body>
 </html>
